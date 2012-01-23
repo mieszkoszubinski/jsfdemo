@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	<ui:define name="content">
+
+		<h:form id="gameForm">
+            
+			<h:panelGrid columns="2">
+
+				<h:outputText value="#{msg.gameNameLabel}" />
+				<h:inputText id="name" value="#{gameBean.game.name}" required="#{true}">
+ 					<f:validator validatorId="gameNameValidator" /> 
+				</h:inputText>
+
+				<h:outputText value="#{msg.gameGameTypeLabel}" />
+				<h:selectOneMenu id="gameTypeString" value="#{gameBean.game.gameTypeString}">
+				  <f:selectItem id="Action" itemLabel="Action" itemValue="Action" />
+				  <f:selectItem id="Adventure" itemLabel="Adventure" itemValue="Adventure" />
+				  <f:selectItem id="Shooter" itemLabel="Shooter" itemValue="Shooter" />
+				  <f:selectItem id="Fighting" itemLabel="Fighting" itemValue="Fighting" />
+				  <f:selectItem id="Strategy" itemLabel="Strategy" itemValue="Strategy" />
+				  <f:selectItem id="Sport" itemLabel="Sport" itemValue="Sport" />
+				  <f:selectItem id="Racing" itemLabel="Racing" itemValue="Racing" />
+				</h:selectOneMenu>
+
+
+				
+				<h:outputText value="#{msg.gameReleaseYearLabel}" />
+				<h:inputText id="releaseYear" value="#{gameBean.game.releaseYear}" required="#{true}" />
+
+				<h:outputText value="#{msg.gamePriceLabel}" />
+				<h:inputText id="price" value="#{gameBean.game.price}" required="#{true}" />
+				
+
+
+			</h:panelGrid>
+			
+			<h:commandButton value="#{msg.gameFormOKButton}"
+				action="#{gameBean.addGame}" />
+
+
+			<h:panelGrid>
+				<h:messages id="messages" showDetail="#{true}"
+					showSummary="#{false}" />
+			</h:panelGrid>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

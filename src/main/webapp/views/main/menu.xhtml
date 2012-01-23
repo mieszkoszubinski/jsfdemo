@@ -12,14 +12,37 @@
 		  </h:commandLink>
 		</li>
 		<li>
-		  <h:commandLink action="add?faces-redirect=true">
+		  <h:commandLink action="addPerson?faces-redirect=true">
 			<h:outputText value="#{msg.personAddLabel}" />
-		  </h:commandLink></li>
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="addGame?faces-redirect=true">
+			<h:outputText value="#{msg.gameAddLabel}" />
+		  </h:commandLink>
+		</li>
 		<li>
 		  <h:commandLink action="showPersons?faces-redirect=true">
 			 <h:outputText value="#{msg.personAllLabel}" />
 		  </h:commandLink>
 		</li>
+		<li>
+		  <h:commandLink action="showGames?faces-redirect=true">
+			 <h:outputText value="#{msg.gameAllLabel}" />
+		  </h:commandLink>
+		</li>
+<!-- 
+		<li>
+		  <h:commandLink action="addGameToPerson?faces-redirect=true">
+			 <h:outputText value="#{msg.gameToPersonLabel}" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="showGamePerson?faces-redirect=true">
+			 <h:outputText value="#{msg.gamePersonLabel}" />
+		  </h:commandLink>
+		</li>
+-->
 	</ul>
    </h:form>
   </div>

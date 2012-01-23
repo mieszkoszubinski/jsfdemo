@@ -1,6 +1,7 @@
-package com.example.jsfdemo.web;
+package szwedi.web;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -16,48 +17,49 @@ import javax.faces.validator.ValidatorException;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.example.jsfdemo.domain.Person;
-import com.example.jsfdemo.service.PersonManager;
+import szwedi.project.*;
+import szwedi.services.*;
+
 
 @SessionScoped
-@Named("personBean")
-public class PersonFormBean implements Serializable {
+@Named("gameBean")
+public class GameFormBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Person person = new Person();
+	private Game game = new Game(null, GameType.Strategy , 0, 0);
 
-	private ListDataModel<Person> persons = new ListDataModel<Person>();
+	private ListDataModel<Game> games = new ListDataModel<Game>();
 
 	@Inject
-	private PersonManager pm;
+	private GameDBManager gameDBManager;
 
-	public Person getPerson() {
-		return person;
+	public Game getGame() {
+		return game;
 	}
 
-	public void setPerson(Person person) {
-		this.person = person;
+	public void setGame(Game game) {
+		this.game = game;
+	}
+	
+	public String addGame() {
+		game.setGameType(GameType.valueOf(game.getGameTypeString()));
+		gameDBManager.addGame(game);
+		return "showGames";
+	}
+		
+	public ListDataModel<Game> getAllGames() {
+		games.setWrappedData(gameDBManager.getAllGames());
+		return games;
 	}
 
-	public ListDataModel<Person> getAllPersons() {
-		persons.setWrappedData(pm.getAllPersons());
-		return persons;
+
+	public void deleteGame() {
+		Game gameToDelete = games.getRowData();
+		gameDBManager.deleteGame(gameDBManager.findGameByName(gameToDelete.getName()));
 	}
 
-	// Actions
-	public String addPerson() {
-		pm.addPerson(person);
-		return "showPersons";
-		//return null;
-	}
-
-	public String deletePerson() {
-		Person personToDelete = persons.getRowData();
-		pm.deletePerson(personToDelete);
-		return null;
-	}
-
+	/*
 	// Validators
 
 	// Business logic validation
@@ -102,4 +104,8 @@ public class PersonFormBean implements Serializable {
 			}
 		}
 	}
+*/
+
+
+
 }

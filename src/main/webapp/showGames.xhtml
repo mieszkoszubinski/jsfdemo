@@ -9,23 +9,31 @@
 	
     <h:form>
     
-     <h:dataTable value="#{personBean.allPersons}" var="item">
+     <h:dataTable value="#{gameBean.allGames}" var="item">
       
       <h:column>
-        <f:facet name="header">#{msg.pesonNameLabel}</f:facet>
+        <f:facet name="header">#{msg.gameNameLabel}</f:facet>
         #{item.name}
       </h:column>
       
       <h:column>
-        <f:facet name="header">#{msg.personDobLabel}</f:facet>
-        <h:outputText value="#{item.dateOfBirth}">
-  			<f:convertDateTime dateStyle="long"  type="date" />
-		</h:outputText>
+        <f:facet name="header">#{msg.gameGameTypeLabel}</f:facet>
+        #{item.gameType}
       </h:column>
-
+      
+      <h:column>
+        <f:facet name="header">#{msg.gameReleaseYearLabel}</f:facet>
+        #{item.releaseYear}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.gamePriceLabel}</f:facet>
+        #{item.price}
+      </h:column>
+      
       <h:column>
         <f:facet name="header">#{msg.action}</f:facet>
-        <h:commandLink value="#{msg.actionDelete}" action="#{personBean.deletePerson}"/>
+        <h:commandLink value="#{msg.actionDelete}" action="#{gameBean.deleteGame}"/>
       </h:column>
 
       
