@@ -1,4 +1,4 @@
-package szwedi.project;
+package mieszko.project;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package szwedi.project;
+package mieszko.project;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;

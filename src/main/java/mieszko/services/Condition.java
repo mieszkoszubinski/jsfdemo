@@ -1,6 +1,6 @@
-package szwedi.services;
+package mieszko.services;
 
-import szwedi.project.Game;
+import mieszko.project.Game;
 
 public abstract class Condition {
 

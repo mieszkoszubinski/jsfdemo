@@ -1,11 +1,12 @@
-package szwedi.services;
+package mieszko.services;
 
 
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
 
-import szwedi.project.*;
+import mieszko.project.*;
+
 
 public class PersonGameDBManager {
 

@@ -1,4 +1,4 @@
-package szwedi.web;
+package mieszko.web;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -16,8 +16,9 @@ import javax.faces.validator.ValidatorException;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import szwedi.project.*;
-import szwedi.services.*;
+import mieszko.project.*;
+import mieszko.services.*;
+
 
 
 @SessionScoped

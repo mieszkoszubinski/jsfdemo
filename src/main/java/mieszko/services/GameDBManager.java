@@ -1,4 +1,4 @@
-package szwedi.services;
+package mieszko.services;
 
 import java.io.IOException;
 import java.sql.*;
@@ -6,7 +6,8 @@ import java.util.*;
 
 import javax.enterprise.context.ApplicationScoped;
 
-import szwedi.project.*;
+import mieszko.project.*;
+
 
 
 @ApplicationScoped

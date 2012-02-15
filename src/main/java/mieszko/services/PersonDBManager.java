@@ -1,12 +1,13 @@
-package szwedi.services;
+package mieszko.services;
 
 import java.io.IOException;
 import java.sql.*;
 import java.sql.Date;
 import java.util.*;
-import szwedi.project.*;
 
 import javax.enterprise.context.ApplicationScoped;
+
+import mieszko.project.*;
 
 @ApplicationScoped
 public class PersonDBManager {

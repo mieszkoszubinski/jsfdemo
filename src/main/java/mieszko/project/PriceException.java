@@ -1,4 +1,4 @@
-package szwedi.project;
+package mieszko.project;
 
 public class PriceException extends Exception {
 
